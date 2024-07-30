@@ -76,6 +76,20 @@ export default {
 </script>
 ```
 
+6. To fix issues with custom WebComponents, edit your vite.config.ts and make sure to include `isCustomElement`:
+
+```ts
+export default defineConfig({
+  plugins: [vue({
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => tag.indexOf('-') >= 0
+      }
+    }
+  })],
+})
+```
+
 ## Additional Configuration
 
 Ensure your `challengeurl` points to the endpoint where ALTCHA's proof-of-work challenge is processed. Customize the component attributes as needed based on your specific use case.

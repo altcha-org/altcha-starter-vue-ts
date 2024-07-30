@@ -1,13 +1,14 @@
 <script setup lang="ts">
-// Importing altcha package will introduce a new element <altcha-widget>
-import 'altcha';
+import { ref } from 'vue';
+import Altcha from './Altcha.vue';
+
+const altchaPayload = ref('');
 
 defineProps<{ msg: string }>()
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-
 
   <div class="card">
     <form action="#">
@@ -22,12 +23,11 @@ defineProps<{ msg: string }>()
       </fieldset>
 
       <fieldset>
-        <!-- Configure your `challengeurl` and remove the `test` attribute, see docs: https://altcha.org/docs/website-integration/#using-altcha-widget -->
-        <altcha-widget
-          style="--altcha-max-width:100%"
-          debug
-          test
-        ></altcha-widget>
+
+        <Altcha
+          v-model:payload="altchaPayload"
+        />
+
       </fieldset>
 
       <button type="submit">Submit</button>
