@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "altcha": "^0.6.7",
+    "altcha": "^0.9.0",
     "vue": "^3.4.31"
   },
   "devDependencies": {
