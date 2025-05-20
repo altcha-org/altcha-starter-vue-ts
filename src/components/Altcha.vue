@@ -45,7 +45,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <!-- Configure your `challengeurl` and remove the `test` attribute, see docs: https://altcha.org/docs/website-integration/#using-altcha-widget -->
+  <!-- Configure your `challengeurl` and remove the `test` attribute, see docs: https://altcha.org/docs/v2/widget-integration/ -->
   <altcha-widget
     ref="altchaWidget"
     style="--altcha-max-width:100%"
