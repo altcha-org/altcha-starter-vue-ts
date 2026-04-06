@@ -3,8 +3,9 @@ import { ref, onMounted, onUnmounted, watch } from 'vue';
 
 // Importing altcha package will introduce a new element <altcha-widget>
 import 'altcha';
+import type { WidgetAttributes, WidgetMethods } from 'altcha/types';
 
-const altchaWidget = ref<HTMLElement | null>(null);
+const altchaWidget = ref<(HTMLElement & WidgetAttributes & WidgetMethods) | null>(null);
 const props = defineProps({
   payload: {
     type: String,
@@ -45,11 +46,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <!-- Configure your `challengeurl` and remove the `test` attribute, see docs: https://altcha.org/docs/v2/widget-integration/ -->
+  <!-- Configure your `challenge` and remove the `test` attribute, see docs: https://altcha.org/docs/v2/widget-integration/ -->
   <altcha-widget
     ref="altchaWidget"
     style="--altcha-max-width:100%"
-    debug
-    test
+    :configuration="JSON.stringify({
+      debug: true,
+      test: true,
+    })"
   ></altcha-widget>
 </template>

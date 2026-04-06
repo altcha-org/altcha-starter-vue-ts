@@ -65,7 +65,7 @@ import 'altcha';
 <template>
   <div>
     <h1>My Vue App with ALTCHA</h1>
-    <altcha-widget challengeurl="https://your-challenge-url.com"></altcha-widget>
+    <altcha-widget challenge="https://your-challenge-url.com"></altcha-widget>
   </div>
 </template>
 
